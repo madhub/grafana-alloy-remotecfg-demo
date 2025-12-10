@@ -1,0 +1,21 @@
+{
+    "resourceLogs": [{
+      "resource": {
+        "attributes": [{
+          "key": "service.name",
+          "value": {"stringValue": "test-service"}
+        }]
+      },
+      "scopeLogs": [{
+        "logRecords": [{
+          "timeUnixNano": "1670000000000000000",
+          "severityText": "INFO",
+          "body": {"stringValue": "Test log message from curl"},
+          "attributes": [{
+            "key": "test.attribute",
+            "value": {"stringValue": "test-value"}
+          }]
+        }]
+      }]
+    }]
+  }

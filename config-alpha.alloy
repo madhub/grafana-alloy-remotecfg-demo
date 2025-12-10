@@ -1,0 +1,5 @@
+remotecfg {
+  url = "http://localhost:5000"
+  id = "service-alpha"
+  poll_frequency = "10s"
+}

@@ -1,0 +1,27 @@
+
+otelcol.auth.basic "default" {
+    username = "default-user"
+    password = "default-password"
+}
+
+otelcol.exporter.otlp "default" {
+    client {
+        endpoint = "http://localhost:5418"
+        auth     = otelcol.auth.basic.default.handler
+    }
+}
+
+otelcol.receiver.otlp "default" {
+  grpc {
+    endpoint = "0.0.0.0:4317"
+  }
+  http {
+    endpoint = "0.0.0.0:4318"
+  }
+
+  output {
+    metrics = [otelcol.exporter.otlp.default.input]
+    logs    = [otelcol.exporter.otlp.default.input]
+    traces  = [otelcol.exporter.otlp.default.input]
+  }
+}
